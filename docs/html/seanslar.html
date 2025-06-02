@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC SİNEMA | Seanslar </title>
+    <link rel="stylesheet" href="../css/seanslar.css">
+    <link rel="icon" href="../gorseller/sinema.jpg">
+</head>
+<body>
+
+
+  <!-- Üst Menü -->
+<nav class="ustmenu">
+    <div class="container"> 
+        <div class="logogrubu">
+            <a class="ustmenubaslik" href="index.html">EC SİNEMA</a> 
+            <img id="menulogo" src="../gorseller/sinemalogo.png" alt="logo">
+        </div>
+
+        <div class="arama-alani">
+            <input type="text" placeholder="Film ara..." class="arama-kutusu">
+            <button class="arama-buton">
+                <img src="../gorseller/aramabutonu.webp" alt="arama-buton">
+            </button>
+        </div>
+
+        <!-- Giriş ve Sepet Butonları Ortak Alanı -->
+        <div class="buton-sepet-grubu">
+            <div class="butonlar">
+                <a class="buton" href="login.html">Giriş Yap</a>
+                <a class="buton" href="register.html">Kayıt Ol</a>
+            </div>
+            <div class="sepet">
+                <a class="sepet-link" href="sepet.html">
+                    <img src="../gorseller/sepet.jpg" alt="Sepet" style="width:30px; height:30px;">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Alt Menü -->
+    <nav class="altmenu">
+        <ul class="altmenu-listesi">
+            <li><a href="filmler.html">Filmler</a></li>
+            <li><a href="seanslar.html">Seanslar</a></li>
+            <li><a href="kampanyalar.html">Kampanyalar</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="fotograflar.html">Fotoğraflar</a></li>
+            <li><a href="degerlendirme.html">Değerlendirme</a></li>
+            <li><a href="hakkinda.html">Hakkında</a></li>
+           
+        </ul>
+    </nav>
+<h2 class="seans-baslik">🎬 Seanslar</h2>
+    
+ <main class="merkez-alan">
+  <div class="koltukalani">
+    <div class="screen"> </div>
+    <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat reserved"></div>
+        <div class="seat reserved"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+        <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat reserved"></div>
+        <div class="seat reserved"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+        <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+        <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+        <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+  </div>
+
+<div class="movie-list">
+  <label for="movie">Film:</label>
+  <select id="movie">
+    <option disabled selected>Film Seçiniz</option>
+    <option value="movie1">Bir Minecraft Filmi</option>
+    <option value="movie2">Şafağa Kadar </option>
+    <option value="movie1">Star Wars: Bölüm 3- Sith'in İntikamı</option>
+    <option value="movie2">Yıldızlararası</option>    
+    <option value="movie1">Ayakçı</option>
+    <option value="movie2">Akıllı Tavşan Momo: Büyük Takip</option>
+    <option value="movie1">Kayıp Dünya</option>
+    <option value="movie2">Ucuz Roman</option>    
+    <option value="movie1">Öldürdüğün Şeyler</option>
+    <option value="movie2">Asil Prenses</option>
+    <option value="movie1">Amatör</option>
+    <option value="movie2">Pink Floyd: Live at Pompeii </option>    
+    <option value="movie1">Tenet </option>
+    <option value="movie2">Başlangıç</option>
+    <option value="movie1">İçimdeki Mutluluk</option>
+    <option value="movie2">Baldız</option>  
+    <option value="movie2">Sitare Cin Kraliçesi</option>
+    <option value="movie1">The End</option>
+    <option value="movie2">Sayko Terapi</option>    
+    <option value="movie1">Zifin</option>
+    <option value="movie2">Sürmeli</option>
+    <option value="movie1">Günahkarlar</option>
+    <option value="movie2">Hay Hak </option>    
+    <option value="movie1">Üç Harfliler: Fal </option>
+    <option value="movie2">Büyük Macera 3: Çılgın Dostlar</option>
+    <option value="movie1">Leon: Sevginin Gücü</option>
+     
+  </select>
+
+  <label for="ticket">Bilet Türü:</label>
+  <select id="ticket">
+    <option disabled selected>Bilet Türü Seçiniz</option>
+    <option value="tam" data-price="200">Tam (200 TL)</option>
+    <option value="ogrenci" data-price="100">Öğrenci (100 TL)</option>
+  </select>
+</div>
+<ul class="info">
+<li>
+    <div class="seat selected"></div>
+    <small>Seçili</small>
+</li>
+<li>
+    <div class="seat"></div>
+    <small>Boş</small>    
+</li>
+<li>
+    <div class="seat reserved"></div>
+    <small>Dolu</small>
+</li>
+
+</ul>
+
+
+<p class="text" , style="color: #fff;">
+   <span id="count">0</span>  adet koltuk için hesaplanan ücret <span id="amount">0</span> TL.
+</p>
+</main>
+
+
+
+<div class="content-wrapper">
+  <select id="session">
+    <option value="" disabled selected>Seans Seç</option>
+    <option value="11:00">11:00</option>
+    <option value="12:30">12:30</option>
+    <option value="14:00">14:00</option>
+    <option value="16:30">16:30</option>
+    <option value="19:00">19:00</option>
+    <option value="22:00">22:00</option>   
+  </select>
+
+  
+  <p>Seçilen Koltuklar: <span id="selected-seats-text"></span></p>
+
+  <div class="button-wrapper">
+    <button id="buyTicket"  onclick="window.location.href='odeme.html'"  disabled>Bilet Al</button>
+
+
+    <button id="clear">Seçimleri Temizle</button>
+  </div>
+</div>
+
+
+
+    <script src="../javascript/seanslar.js"></script>    
+
+    
+
+    <!-- JavaScript -->
+    <script src="../javascript/script.js"></script>
+<script>
+  // Sayfa tamamen yüklendiğinde çalışacak kod
+  document.addEventListener('DOMContentLoaded', function() {
+    // 'userArea' div'ini seçiyoruz
+    const userArea = document.getElementById('userArea');
+
+    // localStorage'dan 'currentUser' bilgisini alıyoruz (JSON string ise parse ediyoruz)
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    // Eğer kullanıcı giriş yapmışsa (currentUser varsa)
+    if (currentUser) {
+      // 'userArea' içeriğini değiştiriyoruz:
+      // 1. Kullanıcı adını gösteriyoruz
+      // 2. Çıkış yap butonu ekliyoruz
+      // 3. Sepet simgesi olduğu gibi kalıyor
+      userArea.innerHTML = `
+        <div class="butonlar">
+          <span style="color:#f5c518; font-weight:bold; margin-right: 10px;">Hoşgeldin, ${currentUser.name}</span>
+          <button id="logoutBtn" class="buton">Çıkış Yap</button>
+        </div>
+        <div class="sepet">
+          <a class="sepet-link" href="sepet.html">
+            <img src="../gorseller/sepet.jpg" alt="Sepet" style="width:30px; height:30px;">
+          </a>
+        </div>
+      `;
+
+      // Çıkış butonunu seçip tıklanma olayını ekliyoruz
+      document.getElementById('logoutBtn').addEventListener('click', function() {
+        // localStorage'daki currentUser'ı siliyoruz, yani çıkış yapıyoruz
+        localStorage.removeItem('currentUser');
+
+        // Sonra kullanıcıyı giriş sayfasına yönlendiriyoruz
+        window.location.href = 'login.html';
+      });
+    }
+    // Eğer kullanıcı yoksa, yani giriş yapılmamışsa
+    // 'userArea' içeriği olduğu gibi kalır (Giriş Yap, Kayıt Ol linkleri gösterilir)
+  });
+</script>
+
+</body>
+</html>
+
+    </body>
+    </html>

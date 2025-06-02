@@ -1,0 +1,223 @@
+body {
+  background-color: #192c46;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.container {
+  background-color: #222;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  flex-wrap: nowrap; /* wrap yerine nowrap */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.buton {
+  color: beige;
+  text-decoration: none;
+  border: 2px solid beige;
+  border-radius: 6px;
+  padding: 5px;
+  margin-left: 10px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.buton:hover {
+  background-color: beige;
+  color: #222;
+}
+
+.sepet {
+  margin-left: 10px;
+  min-width: 40px; /* daralmayı engellemek için */
+}
+
+.sepet-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 2px solid beige;
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+.sepet-link:hover {
+  background-color: beige;
+}
+
+.sepet-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.buton-sepet-grubu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logogrubu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+}
+
+.ustmenubaslik {
+  color: beige;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 36px;
+}
+
+#menulogo {
+  width: 12%;
+  height: 12%;
+  margin-left: 5px;
+}
+
+.arama-alani {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.arama-kutusu {
+  width: 100%;
+  height: 40px;
+  padding: 6px 10px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: black;
+  color: white;
+}
+
+.arama-buton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.arama-buton img {
+  width: 24px;
+  height: 24px;
+}
+
+.altmenu {
+  background-color: rgb(197, 197, 167);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 10px 0;
+}
+
+.altmenu-listesi {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.altmenu-listesi li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.altmenu-listesi li a:hover {
+  color: #5da9ff;
+  font-size: 1.35em;
+  transition: 400ms ease;
+}
+/*mobil uyumlu*/
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .logogrubu {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .arama-alani {
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+
+  .arama-kutusu {
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .butonlar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .sepet {
+    align-self: flex-end;
+    margin-left: 0;
+  }
+
+  .altmenu-listesi {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+}
+
+
+
+.foto-baslik {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+.kare-galeri {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+  grid-template-rows: repeat(2, 1fr);    /* 2 satır */
+  gap: 15px; /* kutular arası boşluk */
+  max-width: 1400px;
+  margin: 40px auto;
+}
+
+.kare-galeri img {
+  width: 100%; /* Görselin genişliği, bulunduğu kutunun tamamını kaplasın */
+  height: 100%; /* Görselin yüksekliği, bulunduğu kutunun tamamını kaplasın */
+  object-fit: cover; /* Görsel, kutuya taşmadan sığsın ve orantılı olarak kesilsin */
+  border-radius: 8px; /* Görselin köşeleri yuvarlatılsın */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Görsele hafif bir gölge efekti verilsin */
+}

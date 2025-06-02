@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EC SİNEMA | Fotoğraflar </title>
+    <link rel="stylesheet" href="../css/fotograflar.css" />
+    <link rel="icon" href="../gorseller/sinema.jpg" />
+</head>
+<body>
+
+<!-- Üst Menü -->
+<nav class="ustmenu">
+    <div class="container"> 
+        <div class="logogrubu">
+            <a class="ustmenubaslik" href="index.html">EC SİNEMA</a> 
+            <img id="menulogo" src="../gorseller/sinemalogo.png" alt="logo">
+        </div>
+
+        <div class="arama-alani">
+            <input type="text" placeholder="Film ara..." class="arama-kutusu">
+            <button class="arama-buton">
+                <img src="../gorseller/aramabutonu.webp" alt="arama-buton">
+            </button>
+        </div>
+
+        <!-- Giriş ve Sepet Butonları Ortak Alanı -->
+        <div class="buton-sepet-grubu">
+            <div class="butonlar">
+                <a class="buton" href="login.html">Giriş Yap</a>
+                <a class="buton" href="register.html">Kayıt Ol</a>
+            </div>
+            <div class="sepet">
+                <a class="sepet-link" href="sepet.html">
+                    <img src="../gorseller/sepet.jpg" alt="Sepet" style="width:30px; height:30px;">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Alt Menü -->
+    <nav class="altmenu">
+        <ul class="altmenu-listesi">
+            <li><a href="filmler.html">Filmler</a></li>
+            <li><a href="seanslar.html">Seanslar</a></li>
+            <li><a href="kampanyalar.html">Kampanyalar</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="fotograflar.html">Fotoğraflar</a></li>
+            <li><a href="degerlendirme.html">Değerlendirme</a></li>
+            <li><a href="hakkinda.html">Hakkında</a></li>
+        </ul>
+    </nav>
+
+    <div class="foto-alani"></div>
+    <h2 class="foto-baslik">Fotoğraflarımıza göz atın</h2>
+
+    <section class="katalog-galeri">
+      <div class="kare-galeri">
+        <img src="../gorseller/sinema2.jpg" alt="Sinema Görseli 1" />
+        <img src="../gorseller/sinema3.jpg" alt="Sinema Görseli 2" />
+        <img src="../gorseller/sinema4.jpg" alt="Sinema Görseli 3" />
+        <img src="../gorseller/sinema5.jpg" alt="Sinema Görseli 4" />
+      </div>
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="../javascript/script.js"></script>
+<script>
+  // Sayfa tamamen yüklendiğinde çalışacak kod
+  document.addEventListener('DOMContentLoaded', function() {
+    // 'userArea' div'ini seçiyoruz
+    const userArea = document.getElementById('userArea');
+
+    // localStorage'dan 'currentUser' bilgisini alıyoruz (JSON string ise parse ediyoruz)
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    // Eğer kullanıcı giriş yapmışsa (currentUser varsa)
+    if (currentUser) {
+      // 'userArea' içeriğini değiştiriyoruz:
+      // 1. Kullanıcı adını gösteriyoruz
+      // 2. Çıkış yap butonu ekliyoruz
+      // 3. Sepet simgesi olduğu gibi kalıyor
+      userArea.innerHTML = `
+        <div class="butonlar">
+          <span style="color:#f5c518; font-weight:bold; margin-right: 10px;">Hoşgeldin, ${currentUser.name}</span>
+          <button id="logoutBtn" class="buton">Çıkış Yap</button>
+        </div>
+        <div class="sepet">
+          <a class="sepet-link" href="sepet.html">
+            <img src="../gorseller/sepet.jpg" alt="Sepet" style="width:30px; height:30px;">
+          </a>
+        </div>
+      `;
+
+      // Çıkış butonunu seçip tıklanma olayını ekliyoruz
+      document.getElementById('logoutBtn').addEventListener('click', function() {
+        // localStorage'daki currentUser'ı siliyoruz, yani çıkış yapıyoruz
+        localStorage.removeItem('currentUser');
+
+        // Sonra kullanıcıyı giriş sayfasına yönlendiriyoruz
+        window.location.href = 'login.html';
+      });
+    }
+    // Eğer kullanıcı yoksa, yani giriş yapılmamışsa
+    // 'userArea' içeriği olduğu gibi kalır (Giriş Yap, Kayıt Ol linkleri gösterilir)
+  });
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

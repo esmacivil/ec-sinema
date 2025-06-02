@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> EC SİNEMA | Ödeme Sayfası</title>    
+    <link rel="stylesheet" href="../css/seanslar.css">
+    <link rel="icon" href="../gorseller/sinema.jpg">
+</head>
+<body>
+
+  <style>
+
+    
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+
+    }
+    .odeme-formu {
+      max-width: 400px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .odeme-formu h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-alani {
+      margin-bottom: 15px;
+    }
+    .form-alani label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-alani input, .form-alani select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .form-alani button {
+      width: 100%;
+      padding: 12px;
+      background-color: #5da9ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .form-alani button:hover {
+      background-color: #3c87d0;
+    }
+  </style>
+</head>
+<body>
+  <form class="odeme-formu">
+    <h2>Ödeme Bilgileri</h2>
+
+    <div class="form-alani">
+      <label for="adSoyad">Ad Soyad</label>
+      <input type="text" id="adSoyad" required>
+    </div>
+
+    <div class="form-alani">
+      <label for="kartNo">Kart Numarası</label>
+      <input type="text" id="kartNo" maxlength="16" required>
+    </div>
+
+    <div class="form-alani">
+      <label for="sonKullanma">Son Kullanma Tarihi</label>
+      <input type="month" id="sonKullanma" required>
+    </div>
+
+    <div class="form-alani">
+      <label for="cvc">CVC</label>
+      <input type="text" id="cvc" maxlength="3" required>
+    </div>
+
+    <div class="form-alani">
+      <label for="biletTuru">Bilet Türü</label>
+      <select id="biletTuru">
+        <option value="tam">Tam (200₺)</option>
+        <option value="ogrenci">Öğrenci (100₺)</option>
+      </select>
+    </div>
+
+    <div class="form-alani">
+      <button type="submit">Ödemeyi Tamamla</button>
+    </div>
+  </form>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const secilenBilet = localStorage.getItem("biletTuru");
+    const biletSelect = document.getElementById("biletTuru");
+
+    if (secilenBilet) {
+      for (let i = 0; i < biletSelect.options.length; i++) {
+        if (biletSelect.options[i].value === secilenBilet) {
+          biletSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

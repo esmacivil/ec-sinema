@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EC SİNEMA | Giriş / Kayıt</title>
+  <link rel="icon" href="../gorseller/sinema.jpg">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #1e1e2f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #2c2c3c;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tab-buttons button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: #444;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab-buttons button.active {
+      background: #f5c518;
+      color: #000;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form.active-form {
+      display: block;
+    }
+
+    .form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #444;
+      color: white;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper input {
+      width: 100%;
+    }
+
+    .password-wrapper img {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 20px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .form button {
+      padding: 10px;
+      background: #f5c518;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form button:hover {
+      background: #ffd700;
+    }
+
+    .form a {
+      color: #aaa;
+      font-size: 0.9em;
+      text-align: right;
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    .form a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="tab-buttons">
+      <button onclick="showForm('login', this)" class="active">Giriş Yap</button>
+      <button onclick="showForm('register', this)">Kayıt Ol</button>
+
+    </div>
+
+    <div id="login" class="form active-form">
+      <h2>Giriş Yap</h2>
+      <form>
+        <input type="text" placeholder="E-posta veya Telefon" required />
+        <div class="password-wrapper">
+          <input type="password" placeholder="Şifre" id="loginPassword" required />
+          <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="gizle-goster" onclick="togglePassword('loginPassword', this)">
+        </div>
+        <button type="submit">Giriş Yap</button>
+      </form>
+      <a href="#">Şifremi Unuttum</a>
+    </div>
+
+    <div id="register" class="form">
+      <h2>Kayıt Ol</h2>
+      <form>
+        <input type="text" placeholder="Ad Soyad" required />
+        <input type="email" placeholder="E-posta" required />
+        <div class="password-wrapper">
+          <input type="password" placeholder="Şifre" id="registerPassword" required />
+          <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="gizle-goster" onclick="togglePassword('registerPassword', this)">
+        </div>
+        <input type="password" placeholder="Şifre Tekrar" required />
+        <button type="submit">Kayıt Ol</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+function showForm(formId, button = null) {
+  document.querySelectorAll('.form').forEach(f => f.classList.remove('active-form'));
+  document.querySelectorAll('.tab-buttons button').forEach(b => b.classList.remove('active'));
+  document.getElementById(formId).classList.add('active-form');
+
+  if (button) {
+    button.classList.add('active');
+  }
+}
+
+
+  function togglePassword(inputId, icon) {
+    const input = document.getElementById(inputId);
+    input.type = input.type === 'password' ? 'text' : 'password';
+  }
+
+  // Kayıt Olma İşlemi
+  document.querySelector("#register form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = this.querySelector('input[placeholder="Ad Soyad"]').value;
+    const email = this.querySelector('input[placeholder="E-posta"]').value;
+    const password = this.querySelector('#registerPassword').value;
+    const confirmPassword = this.querySelector('input[placeholder="Şifre Tekrar"]').value;
+
+    if (password !== confirmPassword) {
+      alert("Şifreler eşleşmiyor!");
+      return;
+    }
+
+    // Kullanıcıyı users dizisine ekle
+const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+// E-posta zaten kayıtlı mı kontrol et
+if (users.some(u => u.email === email)) {
+  alert("Bu e-posta zaten kayıtlı!");
+  return;
+}
+// yeni kullanıcıyı ekle
+  alert("Kayıt başarılı! Şimdi giriş yapabilirsiniz.");
+  this.reset(); // formu temizle
+  showForm("login"); // login formunu göster
+});
+
+</script>
+<script>
+function showForm(formId) {
+  document.querySelectorAll('.form').forEach(f => f.classList.remove('active-form'));
+  document.querySelectorAll('.tab-buttons button').forEach(b => b.classList.remove('active'));
+  document.getElementById(formId).classList.add('active-form');
+  if (formId === 'login') {
+    document.querySelector('.tab-buttons button:first-child').classList.add('active');
+  } else {
+    document.querySelector('.tab-buttons button:last-child').classList.add('active');
+  }
+}
+
+function togglePassword(inputId, icon) {
+  const input = document.getElementById(inputId);
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+
+// Kayıt Formu
+document.querySelector("#register form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = this.querySelector('input[placeholder="Ad Soyad"]').value;
+  const email = this.querySelector('input[placeholder="E-posta"]').value;
+  const password = this.querySelector('#registerPassword').value;
+  const confirmPassword = this.querySelector('input[placeholder="Şifre Tekrar"]').value;
+
+  if (password !== confirmPassword) {
+    alert("Şifreler eşleşmiyor!");
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  if (users.some(u => u.email === email)) {
+    alert("Bu e-posta zaten kayıtlı!");
+    return;
+  }
+
+  users.push({ name, email, password });
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Kayıt başarılı! Şimdi giriş yapabilirsiniz.");
+  this.reset();
+  showForm("login");
+});
+
+// Giriş Formu
+document.querySelector("#login form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = this.querySelector('input[type="text"]').value.trim();
+  const password = this.querySelector('#loginPassword').value;
+
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const user = users.find(u => u.email === email);
+
+  if (!user) {
+    alert("Kullanıcı bulunamadı.");
+    return;
+  }
+
+  if (user.password !== password) {
+    alert("Şifre yanlış.");
+    return;
+  }
+
+  localStorage.setItem("currentUser", JSON.stringify(user));
+  alert(`Hoşgeldin, ${user.name}!`);
+
+
+
+  // yönlendirme istersen:
+ window.location.href = "../html/index.html";
+});
+
+
+</script>
+
+
+</body>
+</html>

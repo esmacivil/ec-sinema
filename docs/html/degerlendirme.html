@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC SİNEMA | Değerlendirme </title>
+    <link rel="stylesheet" href="../css/degerlendirme.css">
+    <link rel="icon" href="../gorseller/sinema.jpg">
+</head>
+<body>
+
+  <!-- Üst Menü -->
+<nav class="ustmenu">
+    <div class="container"> 
+        <div class="logogrubu">
+            <a class="ustmenubaslik" href="index.html">EC SİNEMA</a> 
+            <img id="menulogo" src="../gorseller/sinemalogo.png" alt="logo">
+        </div>
+
+        <div class="arama-alani">
+            <input type="text" placeholder="Film ara..." class="arama-kutusu">
+            <button class="arama-buton">
+                <img src="../gorseller/aramabutonu.webp" alt="arama-buton">
+            </button>
+        </div>
+
+        <!-- Giriş ve Sepet Butonları Ortak Alanı -->
+        <div class="buton-sepet-grubu">
+            <div class="butonlar">
+                <a class="buton" href="login.html">Giriş Yap</a>
+                <a class="buton" href="register.html">Kayıt Ol</a>
+            </div>
+            <div class="sepet">
+                <a class="sepet-link" href="sepet.html">
+                    <img src="../gorseller/sepet.jpg" alt="Sepet" style="width:30px; height:30px;">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Alt Menü -->
+    <nav class="altmenu">
+        <ul class="altmenu-listesi">
+            <li><a href="filmler.html">Filmler</a></li>
+            <li><a href="seanslar.html">Seanslar</a></li>
+            <li><a href="kampanyalar.html">Kampanyalar</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="fotograflar.html">Fotoğraflar</a></li>
+            <li><a href="degerlendirme.html">Değerlendirme</a></li>
+            <li><a href="hakkinda.html">Hakkında</a></li>
+           
+        </ul>
+    </nav>
+
+<!-- Değerlendirme Alanı -->
+<div class="degerlendirme-alani">
+    <h2 class="degerlendirme-baslik">🎬 Film Değerlendirme</h2>
+    
+    <form id="degerlendirmeFormu">
+        <label for="filmSec">Film Seç:</label>
+        <select id="filmSec" required>
+            <option value="film1">Bir Minecraft Filmi</option>
+            <option value="film2">Şafağa Kadar</option>
+            <option value="film3">Star Wars: Bölüm 3- Sith'in İntikamı</option>
+            <option value="film4">Yıldızlararası</option>
+            <option value="film5">Ayakçı</option>
+            <option value="film6">Akıllı Tavşan Momo: Büyük Takip</option>
+            <option value="film7">Kayıp Dünya</option>
+            <option value="film8">Ucuz Roman</option>
+            <option value="film9">Öldürdüğün Şeyler</option>
+            <option value="film10">Asil Prenses</option>
+            <option value="film11">Amatör</option>
+            <option value="film12">Pink Floyd: Live at Pompeii</option>
+            <option value="film13">Tenet</option>
+            <option value="film14">Başlangıç</option>
+            <option value="film15">İçimdeki Mutluluk</option>   
+            <option value="film16">Baldız</option>
+            <option value="film17">Sitare Cin Kraliçesi</option>
+            <option value="film18">The End</option>
+            <option value="film19">Sayko Terapi</option>
+            <option value="film20">Zifin</option>
+            <option value="film21">Sürmeli</option>   
+            <option value="film22">Günahkarlar</option>
+            <option value="film23">Hay Hak</option>
+            <option value="film24">Üç Harfliler: Fal</option>
+            <option value="film25">Büyük Macera 3: Çılgın Dostlar</option>
+            <option value="film26">Leon: Sevginin Gücü</option>                         
+
+        </select>
+
+        <label for="puan">Puan (1-5):</label>
+        <input type="number" id="puan" name="puan" min="1" max="5" required>
+
+        <label for="yorum">Yorum:</label>
+        <textarea id="yorum" name="yorum" rows="4" required></textarea>
+
+        <button type="submit">Gönder</button>
+    </form>
+
+    <div id="yorumlarAlani">
+        <h3>Yorumlar</h3>
+        <ul id="yorumListesi">
+            <!-- Kullanıcı yorumları burada listelenecek -->
+        </ul>
+    </div>
+</section>
+
+
+<section class="yildiz-degerlendirme">
+  <h2 class="marka-baslik">🌟 Marka ve Web Sitesi Değerlendirme</h2>
+
+  <div class="yildiz-kutusu">
+    <h3>EC SİNEMA'dan memnun musunuz?</h3>
+    <div class="yildizlar" id="markaYildiz">
+      <span data-value="1">&#9733;</span>
+      <span data-value="2">&#9733;</span>
+      <span data-value="3">&#9733;</span>
+      <span data-value="4">&#9733;</span>
+      <span data-value="5">&#9733;</span>
+    </div>
+  </div>
+
+  <div class="yildiz-kutusu">
+    <h3>Web Sitemizi yeterli buluyor musunuz?</h3>
+    <div class="yildizlar" id="siteYildiz">
+      <span data-value="1">&#9733;</span>
+      <span data-value="2">&#9733;</span>
+      <span data-value="3">&#9733;</span>
+      <span data-value="4">&#9733;</span>
+      <span data-value="5">&#9733;</span>
+    </div>
+  </div>
+
+    <!-- Tek gönder butonu -->
+  <button class="gonder-buton" onclick="gonderPuan()">Gönder</button>
+
+</section>
+
+
+    <!-- JavaScript -->
+    <script src="../javascript/script.js"></script>
+<script>
+  // Sayfa tamamen yüklendiğinde çalışacak kod
+  document.addEventListener('DOMContentLoaded', function() {
+    // 'userArea' div'ini seçiyoruz
+    const userArea = document.getElementById('userArea');
+
+    // localStorage'dan 'currentUser' bilgisini alıyoruz (JSON string ise parse ediyoruz)
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    // Eğer kullanıcı giriş yapmışsa (currentUser varsa)
+    if (currentUser) {
+      // 'userArea' içeriğini değiştiriyoruz:
+      // 1. Kullanıcı adını gösteriyoruz
+      // 2. Çıkış yap butonu ekliyoruz
+      // 3. Sepet simgesi olduğu gibi kalıyor
+      userArea.innerHTML = `
+        <div class="butonlar">
+          <span style="color:#f5c518; font-weight:bold; margin-right: 10px;">Hoşgeldin, ${currentUser.name}</span>
+          <button id="logoutBtn" class="buton">Çıkış Yap</button>
+        </div>
+        <div class="sepet">
+          <a class="sepet-link" href="sepet.html">
+            <img src="../gorseller/sepet.jpg" alt="Sepet" style="width:30px; height:30px;">
+          </a>
+        </div>
+      `;
+
+      // Çıkış butonunu seçip tıklanma olayını ekliyoruz
+      document.getElementById('logoutBtn').addEventListener('click', function() {
+        // localStorage'daki currentUser'ı siliyoruz, yani çıkış yapıyoruz
+        localStorage.removeItem('currentUser');
+
+        // Sonra kullanıcıyı giriş sayfasına yönlendiriyoruz
+        window.location.href = 'login.html';
+      });
+    }
+    // Eğer kullanıcı yoksa, yani giriş yapılmamışsa
+    // 'userArea' içeriği olduğu gibi kalır (Giriş Yap, Kayıt Ol linkleri gösterilir)
+  });
+</script>
+
+</body>
+</html>
+
+<script src="../javascript/degerlendirme.js"></script>
+
+</body>

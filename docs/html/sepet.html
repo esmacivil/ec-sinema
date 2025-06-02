@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> EC SİNEMA | Sepetim </title>
+ <link rel="stylesheet" href="../css/sepet.css">
+ <link rel="icon" href="../gorseller/sinema.jpg">
+ <link rel="sepet" href="../gorseller/sepet.jpg">
+
+</head>
+<body>
+  <!-- Üst Menü -->
+    <nav class="ustmenu">
+        <div class="container"> 
+            <div class="logogrubu">
+                <a class="ustmenubaslik" href="index.html">EC SİNEMA</a> 
+                <img id="menulogo" src="../gorseller/sinemalogo.png" alt="logo">
+            </div>
+
+            <div class="arama-alani">
+                <input type="text" placeholder="Film ara..." class="arama-kutusu">
+                <button class="arama-buton">
+                    <img src="../gorseller/aramabutonu.webp" alt="arama-buton">
+                </button>
+            </div>
+
+            <div class="butonlar">
+                <a class="buton" href="login.html">Giriş Yap</a>
+                <a class="buton" href="register.html">Kayıt Ol</a>
+            </div>
+
+            <!-- Sepet Butonu -->
+            <div class="sepet">
+                <a class="sepet-link" href="sepet.html">
+                    <img src="../gorseller/sepet.jpg" alt="Sepet" style="width:30px; height:30px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Alt Menü -->
+    <nav class="altmenu">
+        <ul class="altmenu-listesi">
+            <li><a href="filmler.html">Filmler</a></li>
+            <li><a href="seanslar.html">Seanslar</a></li>
+            <li><a href="fragmanlar.html">Fragmanlar</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="fotograflar.html">Fotoğraflar</a></li>
+            <li><a href="degerlendirme.html">Değerlendirme</a></li>
+            <li><a href="hakkinda.html">Hakkında</a></li>
+        </ul>
+    </nav>
+
+
+ <div id="filmListesi"></div>
+<div id="sepetListesi"></div> 
+
+  <div class="sepet-container">
+    <div class="sepet-baslik">Sepetim</div>
+
+    <table class="sepet-tablosu">
+      <thead>
+        <tr>
+          <th>Film</th>
+          <th>Adet</th>
+          <th>Diğer</th>
+
+        </tr>
+      </thead>
+    </table>
+
+    <div class="toplam-alani"></div>
+
+ 
+  
+
+<div style="text-align: center;">
+  <a href="seanslar.html" class="satin-al-buton">Satın Al</a>
+</div>
+
+ 
+<script src="../javascript/sepet.js"></script>
+</body>
+
+</html>

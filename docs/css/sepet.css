@@ -1,0 +1,223 @@
+body {
+  background-color: #192c46;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+.container {
+  background-color: #222;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.buton {
+  color: beige;
+  text-decoration: none;
+  border: 2px solid beige;
+  border-radius: 6px;
+  padding: 5px;
+  margin-left: 10px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.buton:hover {
+  background-color: beige;
+  color: #222;
+}
+
+.sepet-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 2px solid beige;
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: transparent;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.sepet-link:hover {
+  background-color: beige;
+  color: #222;
+}
+
+.sepet-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.logogrubu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+}
+
+.ustmenubaslik {
+  color: beige;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 36px;
+}
+
+#menulogo {
+  width: 50px; /* Sabit genişlik, orantılı yükseklik için auto */
+  height: auto;
+  margin-left: 5px;
+}
+
+.arama-alani {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 5%;
+  flex: 1 1 auto;
+  min-width: 250px;
+}
+
+.arama-kutusu {
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  padding: 6px 10px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: black;
+  color: white;
+}
+
+.arama-buton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.arama-buton img {
+  width: 24px;
+  height: 24px;
+}
+
+.altmenu {
+  background-color: rgb(197, 197, 167);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 10px 0;
+}
+
+.altmenu-listesi {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.altmenu-listesi li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.altmenu-listesi li a:hover {
+  color: #5da9ff;
+  font-size: 1.35em;
+  transition: 400ms ease;
+}
+
+.sepet-container {
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: #222;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.sepet-baslik {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: rgba(250, 250, 250, 0.849);
+  text-align: center;
+}
+
+.sepet-tablosu {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+.sepet-tablosu th, .sepet-tablosu td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+.sepet-tablosu th {
+  background-color: #111;
+  color: #5da9ff;
+}
+
+.sil-buton {
+  background-color: #e91e63;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sil-buton:hover {
+  background-color: #b71c4a;
+}
+
+.toplam-alani {
+  margin-top: 30px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: beige;
+}
+
+.satin-al-buton {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background-color: #5da9ff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block; /* burayı değiştirdik */
+}
+
+.satin-al-buton:hover {
+  background-color: #3c87d0;
+}
+
+
+.satin-al-buton.clicked {
+  transform: scale(0.9);
+}
